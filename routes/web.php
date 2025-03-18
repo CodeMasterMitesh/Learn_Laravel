@@ -6,23 +6,22 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
+Route::get('/contacts', function () {
+    return view('contacts');
+});
 // Route::view("/aboutus", "about");
 Route::prefix("aboutus")->group(function(){
-    
+
     Route::get('/employee', function () {
         return view('about');
     })->name("aboutus");
-    
+
     Route::get('/company', function () {
         return view('companydetailes');
     });
-    
-    Route::get('/customer', function () {
-        return view('customer');
-    });
+
 });
 
 Route::get("/blogs",function(){

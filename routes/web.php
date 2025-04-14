@@ -4,6 +4,10 @@
 // how to create group route in laravel
 // how to create route prefix in laravel
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+
+
+Route::resource('student', StudentController::class);
 
 Route::get('/', function () {
     return view('home');
